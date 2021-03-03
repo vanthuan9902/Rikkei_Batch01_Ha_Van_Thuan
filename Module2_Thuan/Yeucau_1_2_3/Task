@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+!DOCTYPE html>
+<html>
+<head>
+    <title>Registation Form * Form Tutorial</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h2 class="text-center">Registation Form - Input User's Detail Information</h2>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <label for="usr">Name:</label>
+                <input required="true" type="text" class="form-control" id="usr">
+            </div>
+            <div class="form-group">
+                <label for="cmnd">Số CMND:</label>
+                <input required="true" type="email" class="form-control" id="cmnd">
+            </div>
+            <div class="form-group">
+                <label for="birthday">Birthday:</label>
+                <input type="date" class="form-control" id="birthday">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input required="true" type="email" class="form-control" id="email">
+            </div>
+            <div class="form-group">
+                <label for="diachi"> Địa chỉ:</label>
+                <input required="true" type="diachi" class="form-control" id="diachi">
+            </div>
+            <div class="form-group">
+                <label for="loaikh">Loại Customer:</label>
+                <select id="loaikh" class="form-control">
+                    <option>Diamond</option>
+                    <option>Platinum</option>
+                    <option>Gold</option>
+                    <option>Silver</option>
+                    <option>Member</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="giamgia">Giảm giá:</label>
+                <input type="text" class="form-control" id="giamgia">
+            </div>
+            <div class="form-group">
+                <label for="sl">Số lượng đi kèm :</label>
+                <input type="text" class="form-control" id="sl">
+            </div>
+            <div class="form-group">
+                <label for="slt">Số ngày thuê :</label>
+                <input type="text" class="form-control" id="slt">
+            </div>
+            <div class="form-group">
+                <label for="loaidv">Loại Dịch Vụ:</label>
+                <select id="loaidv" class="form-control">
+                    <option>Villa</option>
+                    <option>House</option>
+                    <option>Room</option>>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="loaiphong">Loại Phòng:</label>
+                    <select id="loaiphong"class="form-control">
+                        <option>Vip</option>
+                        <option>Business</option>
+                        <option>Normal</option>
+                    </select>
+            </div>
+            <button class="btn btn-success" onclick="myfunction()">Result</button>
+        </div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">STT</th>
+                <th scope="col">Name</th>
+                <th scope="col">CMND</th>
+                <th scope="col">Birthday</th>
+                <th scope="col">Email</th>
+                <th scope="col">Address</th>
+                <th scope="col">Loại Customer</th>
+                <th scope="col">Giảm giá</th>
+                <th scope="col">Số lượng đi kèm</th>
+                <th scope="col">Số ngày thuê</th>
+                <th scope="col">Loại dịch vụ</th>
+                <th scope="col">Loại phòng </th>
+                <th scope="col">Tính tiền</th>
+            </tr>
+            </thead>
+            <tbody>
+            <thead>
+                <tr>
+                    <th scope="row" >1</th>
+                    <td id="ten_mb"></td>
+                    <td id="cmnd_mb"></td>
+                    <td id="bd_mb"></td>
+                    <td id="em_mb"></td>
+                    <td id="add_mb"></td>
+                    <td id="loaikh_mb"></td>
+                    <td id="ggia_mb"></td>
+                    <td id="slk_mb"></td>
+                    <td id="snt_mb"></td>
+                    <td id="ldv_mb"></td>
+                    <td id="lp_mb"></td>
+                    <td id="cost_mb"></td>
+                </tr>
+            </thead>
+            </tbody>
+        </table>
+    </div>
+    <script language="JavaScript">
+        function myfunction() {
+            var i;
+            var reg_email = /^[A-Za-z0-9]+([_\.\-]?[A-Za-z0-9])*@[A-Za-z0-9]+([\.\-]?[A-Za-z0-9]+)*(\.[A-Za-z]+)+$/;
+            var reg_soduong = /^\d*$/;
+            var reg_kitu = /^([0-9]{8}|1[89]00[0-9]{4})$/;
+            var email = document.getElementById('email');
+            var so_cmnd = document.getElementById('cmnd');
+            if (reg_soduong.test(so_cmnd.value) == false)
+                i += alert("Số cmnd chỉ chứa số dương");
+            else if (reg_kitu.test(so_cmnd.value) == false)
+                i += alert("Số cmnd phải đủ 8 chứ số");
+            else if (email.value == "")
+                i += alert("Không được bỏ trống email.");
+            else if (reg_email.test(email.value) == false)
+                i += alert("Email không hợp lệ");
+            else {
+                var ten = document.getElementById("usr").value;
+                var cmnd = document.getElementById("cmnd").value;
+                var date = document.getElementById("birthday").value;
+                var email = document.getElementById("email").value;
+                var address = document.getElementById("diachi").value;
+                var loaikh = document.getElementById("loaikh").value;
+                var ggia = document.getElementById("giamgia").value;
+                var soluong = document.getElementById("sl").value;
+                var songay = document.getElementById("slt").value;
+                var loaidv = document.getElementById("loaidv").value;
+                var loaiphong = document.getElementById("loaiphong").value;
+                // var giaTien = document.getElementById("giaTien")//(loaidv=="Villa"?500:loaidv=="House"?300:100)*songay*(1-ggia/100);
+                // document.getElementById("table").style.display="black";
+                document.getElementById("ten_mb").innerText = ten;
+                document.getElementById("cmnd_mb").innerText = cmnd;
+                document.getElementById("bd_mb").innerText = date;
+                document.getElementById("em_mb").innerText = email;
+                document.getElementById("add_mb").innerText = address;
+                document.getElementById("loaikh_mb").innerText = loaikh;
+                document.getElementById("ggia_mb").innerText = ggia;
+                document.getElementById("slk_mb").innerText = soluong;
+                document.getElementById("snt_mb").innerText = songay;
+                document.getElementById("ldv_mb").innerText = loaidv;
+                document.getElementById("lp_mb").innerText = loaiphong;
+                // document.getElementById("cost_mb").innerText = giaTien();
+                // function giaTien() {
+                //     return(loaidv == "Villa" ? 500 : loaidv == "House" ? 300 : 100) * songay * (1-ggia/100);
+                // }
+                document.getElementById("cost_mb").innerText = getGia();
+
+                function getGia() {
+                    return (loaidv == "Villa" ? 500 : loaidv == "House" ? 300 : 100) * songay * (1 - ggia / 100);
+                }
+            }
+        }
+
+    </script>
+</div>
+</body>
+</html>
