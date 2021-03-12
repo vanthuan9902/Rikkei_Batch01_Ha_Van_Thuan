@@ -1,0 +1,25 @@
+<div class="container">
+  <h2>Quan Lý Khách Hàng</h2>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Mã Khách Hàng</th>
+      <th>Tên Khách Hàng</th>
+      <th>Emai</th>
+      <th>Số Điện Thoại</th>
+      <th>Ngày Sinh</th>
+      <th>Mã Loại Khách</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let khachhang of khachhang">
+      <td>{{khachhang.makh}}</td>
+      <td>{{khachhang.tenkh}}</td>
+      <td>{{khachhang.email}}</td>
+      <td>{{khachhang.sdt}}</td>
+      <td>{{khachhang.ngaysinh}}</td>
+      <td>{{khachhang.maloai}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
